@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.proxy.http.global</string>
+            <key>PayloadIdentifier</key>
+            <string>com.headshot.aimlock.proxy</string>
+            <key>PayloadUUID</key>
+            <string>12345678-1234-1234-1234-123456789abc</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>ProxyPACURL</key>
+            <string>http://localhost/proxy/headshot_aimlock.pac</string>
+        </dict>
+    </array>
+    <key>PayloadDisplayName</key>
+    <string>Headshot AimLock Config</string>
+    <key>PayloadIdentifier</key>
+    <string>com.headshot.aimlock</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>87654321-4321-4321-4321-cba987654321</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>

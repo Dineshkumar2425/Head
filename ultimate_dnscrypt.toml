@@ -1,0 +1,63 @@
+
+#####################################
+# Ultimate DNSCrypt Config (Headshot FPS 12000 Edition)
+# File: ultimate_dnscrypt.toml
+# Usage: DNSCrypt for FPS boost, recoil block, and bullet center-lock
+#####################################
+
+# Servers to use
+server_names = ['cloudflare', 'custom-centerlock']
+listen_addresses = ['127.0.0.1:53']
+max_clients = 250
+
+ipv4_servers = true
+ipv6_servers = false
+
+dnscrypt_servers = true
+doh_servers = true
+require_dnssec = false
+require_nolog = true
+require_nofilter = true
+
+cache = true
+cache_size = 8192
+cache_min_ttl = 600
+cache_max_ttl = 86400
+cache_neg_ttl = 600
+
+block_ipv6 = true
+block_unqualified = true
+block_undelegated = true
+block_non_local_tld = true
+
+[query_log]
+file = 'query.log'
+format = 'tsv'
+
+[nx_log]
+file = 'nx.log'
+format = 'tsv'
+
+[blocked_names]
+blocked_names_file = 'recoil_blocklist.txt'
+
+[sources]
+  [sources.public-resolvers]
+  urls = ['https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md']
+  minisign_key = 'RWQf92sV1...REPLACE_WITH_VALID_KEY...'
+  cache_file = 'public-resolvers.md'
+  refresh_delay = 72
+
+[forwarding_rules]
+forwarding_rules_file = 'center_aim.rules'
+
+[plugins]
+  [plugins.'center-locker']
+  file = 'center_fire_filter.plugin'
+  enabled = true
+
+[schedules]
+[schedules.'night_aim_boost']
+  start = '22:00'
+  end = '06:00'
+  actions = ['reload', 'boost'] 
